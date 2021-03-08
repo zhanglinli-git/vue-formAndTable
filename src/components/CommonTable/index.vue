@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2020-07-21 17:16:25
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-05 14:20:19
+ * @LastEditTime: 2021-03-08 14:12:55
 -->
 <!-- 封装的table-->
 <template>
@@ -76,7 +76,11 @@
           <template slot-scope="scope">
             <template v-if="column.formatter">
               <template v-if="column.cellClick">
-                <span class="cellClick" type="text" @click="column.cellClick(scope.row) && hasPermissions(column.code)">
+                <span
+                  class="cellClick"
+                  type="text"
+                  @click="column.cellClick(scope.row) && hasPermissions(column.code)"
+                >
                   <template v-if="column.fileType">
                     <el-tooltip class="item" effect="dark" placement="top-start" max-width="600px">
                       <div slot="content">
@@ -202,7 +206,6 @@
   </div>
 </template>
 <script>
-
 export default {
   name: 'CommonTable',
   props: {
@@ -480,11 +483,15 @@ export default {
 }
 .el-table__fixed-right {
   height: auto !important;
-  bottom: 11px;
+  bottom: 11px !important;
 }
 
 .el-table__fixed-right::before,
 .el-table__fixed::before {
-  background: none;
+  background: none !important;
+}
+
+.el-table-column--selection .cell {
+  padding-right: 11px !important;
 }
 </style>
