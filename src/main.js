@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 14:52:26
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-08 10:40:52
+ * @LastEditTime: 2021-03-08 11:20:16
  */
 import Vue from 'vue'
 
@@ -22,14 +22,13 @@ import '@/icons' // icon
 import '@/permission' // permission control
 // 自定义权限指令
 import permission from '@/directive/permission'
-import { BackToTop, Toolbar } from '@/components'
+import { Toolbar } from '@/components'
 
 if (process.env.NODE_ENV === 'production') {
   const { mockXHR } = require('../mock')
   mockXHR()
 }
 Vue.use(permission)
-Vue.component('BackToTop', BackToTop)
 Vue.component('Toolbar', Toolbar)
 Vue.use(ElementUI)
 
