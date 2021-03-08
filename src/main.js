@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 14:52:26
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-08 11:20:16
+ * @LastEditTime: 2021-03-08 11:37:19
  */
 import Vue from 'vue'
 
@@ -18,7 +18,6 @@ import App from './App'
 import store from './store'
 import router from './router'
 
-import '@/icons' // icon
 import '@/permission' // permission control
 // 自定义权限指令
 import permission from '@/directive/permission'
