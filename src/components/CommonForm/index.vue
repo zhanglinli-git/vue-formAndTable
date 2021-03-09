@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2020-07-21 14:08:15
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-09 16:14:49
+ * @LastEditTime: 2021-03-09 16:52:44
 -->
 <template>
   <div v-if="formItem && formItem.length > 0">
@@ -109,7 +109,6 @@
               controls-position="right"
               clearable
             />
-
             <!-- 默认文本框 -->
             <el-input
               v-if="item.itemType === 'textarea'"

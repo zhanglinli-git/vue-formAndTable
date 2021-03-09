@@ -3,17 +3,17 @@
  * @Author: zhanglinli
  * @Date: 2021-02-24 15:23:14
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-09 16:13:30
+ * @LastEditTime: 2021-03-09 16:48:44
 -->
 <template>
-  <div style="margin:0px 100px">
+  <div style="margin:0px 50px">
     <el-card>
       <h2>表单控件使用</h2>
       <common-form
         ref="detailFormRef"
         :inline="true"
         :form-item-list="fromItemList"
-        :item-width="300"
+        :item-width="350"
         :label-width="200"
       />
     </el-card>
@@ -40,11 +40,11 @@
       </el-card>
       <el-card>
         <h2>表单内控件联动-远程数据联动：</h2>如物料类型、物料名称
-        <common-form ref="onefromRef" :form-item-list="from1" :item-width="300" :label-width="100" />
+        <common-form ref="onefromRef" :form-item-list="from1" :item-width="250" :label-width="100" />
       </el-card>
       <el-card>
         <h2>表单内控件联动-显示联动:</h2>如权限类型、权限值
-        <common-form ref="twofromRef" :form-item-list="from2" :item-width="300" :label-width="100" />
+        <common-form ref="twofromRef" :form-item-list="from2" :item-width="250" :label-width="100" />
       </el-card>
     </el-row>
   </div>
@@ -206,7 +206,7 @@ export default {
         itemType: 'textarea', // 控件类型
         prop: 'textarea', // 发送表单时值对应key值
         label: '默认文本框:', // label文案
-        itemWidth: 300, // item宽度
+        itemWidth: 350, // item宽度
       },
     ]
     this.from1 = [
