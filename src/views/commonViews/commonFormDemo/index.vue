@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-02-24 15:23:14
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-01 16:11:44
+ * @LastEditTime: 2021-03-09 16:13:30
 -->
 <template>
   <div style="margin:0px 100px">
@@ -13,8 +13,8 @@
         ref="detailFormRef"
         :inline="true"
         :form-item-list="fromItemList"
-        :item-width="400"
-        :label-width="250"
+        :item-width="300"
+        :label-width="200"
       />
     </el-card>
 
@@ -55,13 +55,13 @@ import { f1, f2, f3, f31 } from './index'
 
 export default {
   components: {
-    CommonForm
+    CommonForm,
   },
   data() {
     return {
       fromItemList: [],
       from1: [],
-      from2: []
+      from2: [],
     }
   },
   created() {
@@ -71,7 +71,7 @@ export default {
         itemType: 'pureLabel', // 控件类型
         prop: 'pureLabel', // 发送表单时值对应key值
         label: '单纯文本显示:', // label文案
-        selected: '单纯文本显示' // 默认值
+        selected: '单纯文本显示', // 默认值
       },
       // // 单纯文本显示(控件底部文字提示)
       // {
@@ -82,13 +82,13 @@ export default {
       {
         itemType: 'input', // 控件类型
         prop: 'input', // 发送表单时值对应key值
-        label: '默认输入框:' // label文案
+        label: '默认输入框:', // label文案
       },
       // 默认数值输入框
       {
         itemType: 'inputNumber', // 控件类型
         prop: 'inputNumber', // 发送表单时值对应key值
-        label: '默认数值输入框:' // label文案
+        label: '默认数值输入框:', // label文案
       },
       // 本地下拉框
       {
@@ -98,13 +98,13 @@ export default {
         options: [
           {
             value: '1',
-            label: '已处理'
+            label: '已处理',
           },
           {
             value: '0',
-            label: '未处理'
-          }
-        ] // 本地写死下拉框数据
+            label: '未处理',
+          },
+        ], // 本地写死下拉框数据
       },
       // 远程下拉框
       {
@@ -112,7 +112,7 @@ export default {
         prop: 'selectFetch', // 发送表单时值对应key值
         label: '远程下拉:', // label文案
         selectFetch: f1, // 远程接口名
-        selectResultField: 'data' // 接口最后获取变量参数名
+        selectResultField: 'data', // 接口最后获取变量参数名
       },
       // 自动检索下拉框
       {
@@ -120,13 +120,13 @@ export default {
         prop: 'selectWithAuto', // 发送表单时值对应key值
         label: '自动检索下拉框:', // label文案
         selectFetch: f1, // 远程接口名
-        selectResultField: 'data' // 接口最后获取变量参数名
+        selectResultField: 'data', // 接口最后获取变量参数名
       },
       // 城市自动检索下拉框
       {
         itemType: 'selectCity', // 控件类型
         prop: 'selectCity', // 发送表单时值对应key值
-        label: '城市自动检索下拉框:' // label文案
+        label: '城市自动检索下拉框:', // label文案
       },
       // 树形选择器
       {
@@ -139,8 +139,8 @@ export default {
           // 配置项（必选）和element配置项一致
           value: 'deptId',
           label: 'deptName',
-          children: 'children'
-        }
+          children: 'children',
+        },
       },
       // 普通多选择器
       {
@@ -149,7 +149,7 @@ export default {
         label: '普通多选择器:', // label文案
         selectFetch: f1, // 远程接口名
         selectResultField: 'data', // 接口最后获取变量参数名
-        showCheckbox: true // 是否为多选
+        showCheckbox: true, // 是否为多选
       },
       // 树形多选择器
       {
@@ -162,9 +162,9 @@ export default {
           // 配置项（必选）和element配置项一致
           value: 'deptId',
           label: 'deptName',
-          children: 'children'
+          children: 'children',
         },
-        showCheckbox: true // 是否为多选
+        showCheckbox: true, // 是否为多选
       },
       // 单选框
       {
@@ -172,41 +172,42 @@ export default {
         prop: 'radio', // 发送表单时值对应key值
         label: '单选框:', // label文案
         selectFetch: f1, // 远程接口名
-        selectResultField: 'data' // 接口最后获取变量参数名
+        selectResultField: 'data', // 接口最后获取变量参数名
       },
       // switch开关
       {
         itemType: 'switch', // 控件类型
         prop: 'switch', // 发送表单时值对应key值
         label: 'switch开关:', // label文案
-        selected: true // 默认值
+        selected: true, // 默认值
       },
       // 文件上传
       {
         itemType: 'upload', // 控件类型
         prop: 'file', // 发送表单时值对应key值
         label: '文件上传:', // label文案
-        accept: '.zip, .rar' // 接受文件类型
+        accept: '.zip, .rar', // 接受文件类型
       },
       // 日期范围选择器
       {
         itemType: 'datetimerange', // 控件类型
         prop: ['beginTime', 'endTime'], // 发送表单时值对应key值,日期范围选择为数组
-        label: '日期范围选择器:' // label文案
+        label: '日期范围选择器:', // label文案
+        itemWidth: 300, // item宽度
       },
       // 日期选择器
       {
         itemType: 'datePicker', // 控件类型
         prop: 'time', // 发送表单时值对应key值
-        label: '日期选择器:' // label文案
+        label: '日期选择器:', // label文案
       },
       // 默认文本框
       {
         itemType: 'textarea', // 控件类型
         prop: 'textarea', // 发送表单时值对应key值
         label: '默认文本框:', // label文案
-        itemWidth: 400 // item宽度
-      }
+        itemWidth: 300, // item宽度
+      },
     ]
     this.from1 = [
       {
@@ -217,7 +218,7 @@ export default {
         valueKey: 'materialTypeId', // valueKey: select的value对应的字段
         selectFetch: f3, // 远程数据的获取函数
         selectResultField: 'result', // selectResultField: 远程数据的最后一个获取字段名
-        changeProp: 'matterName' // changeProp: 级联控件——被联动远程数据改变联动
+        changeProp: 'matterName', // changeProp: 级联控件——被联动远程数据改变联动
       },
       {
         itemType: 'select',
@@ -226,8 +227,8 @@ export default {
         labelKey: 'materialName', // select的label对应的字段
         valueKey: 'materialCode', // valueKey: select的value对应的字段
         selectFetch: f31, // 远程数据的获取函数
-        fetchParams: { param: '' } // 远程接口数据的入参
-      }
+        fetchParams: { param: '' }, // 远程接口数据的入参
+      },
     ]
     this.from2 = [
       {
@@ -238,26 +239,26 @@ export default {
         options: [
           { label: '机构', value: 'deptId' },
           { label: '渠道', value: 'channelId' },
-          { label: '打印点', value: 'centerId' }
+          { label: '打印点', value: 'centerId' },
         ],
         //  changeShow: 级联控件——控件显示联动，一般与配置属性showItem搭配使用
         changeShow: {
           deptId: {
             isTrue: ['deptId'],
-            isFalse: ['channelId', 'centerId']
+            isFalse: ['channelId', 'centerId'],
           },
           channelId: {
             isTrue: ['channelId'],
-            isFalse: ['deptId', 'centerId']
+            isFalse: ['deptId', 'centerId'],
           },
           centerId: {
             isTrue: ['centerId'],
-            isFalse: ['deptId', 'channelId']
+            isFalse: ['deptId', 'channelId'],
           },
           '': {
-            isFalse: ['centerId', 'deptId', 'channelId']
-          }
-        }
+            isFalse: ['centerId', 'deptId', 'channelId'],
+          },
+        },
       },
       {
         prop: 'propertyType',
@@ -267,46 +268,46 @@ export default {
         options: [
           { label: '机构', value: 'deptId' },
           { label: '渠道', value: 'channelId' },
-          { label: '打印点', value: 'centerId' }
+          { label: '打印点', value: 'centerId' },
         ],
         //  changeShow: 级联控件——控件显示联动，一般与配置属性showItem搭配使用
         changeShow: {
           deptId: {
             isTrue: ['deptId'],
-            isFalse: ['channelId', 'centerId']
+            isFalse: ['channelId', 'centerId'],
           },
           channelId: {
             isTrue: ['channelId'],
-            isFalse: ['deptId', 'centerId']
+            isFalse: ['deptId', 'centerId'],
           },
           centerId: {
             isTrue: ['centerId'],
-            isFalse: ['deptId', 'channelId']
+            isFalse: ['deptId', 'channelId'],
           },
           '': {
-            isFalse: ['centerId', 'deptId', 'channelId']
-          }
-        }
+            isFalse: ['centerId', 'deptId', 'channelId'],
+          },
+        },
       },
       {
         prop: 'deptId',
         label: '权限值:',
-        placeholder: '请选择机构'
+        placeholder: '请选择机构',
       },
       {
         prop: 'channelId',
         label: '权限值:',
         placeholder: '请选择渠道',
-        showItem: false
+        showItem: false,
       },
       {
         prop: 'centerId',
         label: '权限值:',
         placeholder: '请选择打印点',
-        showItem: false
-      }
+        showItem: false,
+      },
     ]
-  }
+  },
 }
 </script>
 <style scoped>

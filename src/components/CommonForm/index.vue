@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2020-07-21 14:08:15
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-01 16:05:44
+ * @LastEditTime: 2021-03-09 16:14:49
 -->
 <template>
   <div v-if="formItem && formItem.length > 0">
@@ -265,7 +265,7 @@
               :readonly="item.readonly"
               :size="item.size ? item.size : size"
               :placeholder="item.placeholder || item.label && `请选择${item.label.replace(/:/g, '')}` || ''"
-              :style="itemStyle + (item.itemWidth && item.itemWidth > 399 ? `width: ${item.itemWidth}px;` : 'width:400px')"
+              :style="itemStyle + (item.itemWidth && item.itemWidth > 399 ? `width: ${item.itemWidth}px;` : itemWidth)"
               unlink-panels
               range-separator="至"
               start-placeholder="开始日期"

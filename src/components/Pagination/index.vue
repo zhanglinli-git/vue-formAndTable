@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 15:05:19
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-01 15:23:32
+ * @LastEditTime: 2021-03-08 16:21:46
 -->
 <template>
   <div :class="{'hidden':hidden}" class="pagination-container">
@@ -40,7 +40,7 @@ export default {
     pageSizes: {
       type: Array,
       default() {
-        return [5, 10, 30, 50, 100]
+        return [5, 10, 30, 50, 100, 500]
       }
     },
     layout: {

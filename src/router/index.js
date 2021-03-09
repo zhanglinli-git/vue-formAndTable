@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 14:52:26
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-08 10:34:12
+ * @LastEditTime: 2021-03-09 10:15:12
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -51,7 +51,23 @@ export const constantRoutes = [
       },
     ],
   },
-
+  {
+    path: '/dataAnalysis',
+    component: Layout,
+    redirect: '/dataAnalysis',
+    name: 'DataAnalysis1',
+    children: [
+      {
+        path: 'dataAnalysis',
+        name: 'DataAnalysis',
+        component: () => import('@/views/indexManage/dataAnalysis1/index'),
+        meta: {
+          title: '数据分析页',
+          icon: 'nested',
+        },
+      },
+    ],
+  },
   {
     path: '/404',
     component: () => import('@/views/404'),

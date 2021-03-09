@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 14:52:26
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-05 14:05:52
+ * @LastEditTime: 2021-03-09 16:17:50
  */
 import router from './router'
 import store from './store'
@@ -17,7 +17,7 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const whiteList = ['/login'] // no redirect whitelist
 
-router.beforeEach(async(to, from, next) => {
+router.beforeEach(async (to, from, next) => {
   // start progress bar
   NProgress.start()
 
@@ -40,8 +40,7 @@ router.beforeEach(async(to, from, next) => {
         try {
           // get user info
           await store.dispatch('user/getInfo')
-
-          next()
+          next({ path: '/commonViews/commonFormDemo' })
         } catch (error) {
           // remove token and go to login page to re-login
           await store.dispatch('user/resetToken')
