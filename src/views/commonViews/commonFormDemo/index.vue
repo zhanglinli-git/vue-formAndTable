@@ -3,12 +3,12 @@
  * @Author: zhanglinli
  * @Date: 2021-02-24 15:23:14
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-09 16:48:44
+ * @LastEditTime: 2021-03-10 17:30:26
 -->
 <template>
   <div style="margin:0px 50px">
     <el-card>
-      <h2>表单控件使用</h2>
+      <h3>表单控件使用</h3>
       <common-form
         ref="detailFormRef"
         :inline="true"
@@ -18,33 +18,40 @@
       />
     </el-card>
 
-    <el-row type="flex" justify="between">
+    <el-row type="flex" justify="between" class="use">
       <el-card>
-        <h2>表单常用方法：一般用于新增修改的表单</h2>
+        <h3>表单常用方法：一般用于新增修改的表单</h3>
         <div>
           表单数据是否变化:
-          <font style="font-weight:bold">this.$refs.detailFormRef.isChange()</font>
+          <div style="font-weight:bold">this.$refs.detailFormRef.isChange()</div>
         </div>
         <div>
           表单数据校验是否成功:
-          <font style="font-weight:bold">this.$refs.detailFormRef.checkFrom()</font>
+          <div style="font-weight:bold">this.$refs.detailFormRef.checkFrom()</div>
         </div>
         <div>
           表单数据获取:
-          <font style="font-weight:bold">this.$refs.detailFormRef.getFormData()</font>
+          <div style="font-weight:bold">this.$refs.detailFormRef.getFormData()</div>
         </div>
         <div>
           表单数据重置(包含逻辑重置):
-          <font style="font-weight:bold">this.$refs.detailFormRef.resetForm()</font>
+          <div style="font-weight:bold">this.$refs.detailFormRef.resetForm()</div>
         </div>
       </el-card>
       <el-card>
-        <h2>表单内控件联动-远程数据联动：</h2>如物料类型、物料名称
-        <common-form ref="onefromRef" :form-item-list="from1" :item-width="250" :label-width="100" />
+        <h3>表单内控件联动-远程数据联动：</h3>如物料类型、物料名称
+        <common-form ref="onefromRef" :form-item-list="from1" :item-width="200" :label-width="80" />
       </el-card>
       <el-card>
-        <h2>表单内控件联动-显示联动:</h2>如权限类型、权限值
-        <common-form ref="twofromRef" :form-item-list="from2" :item-width="250" :label-width="100" />
+        <h3>表单内控件联动-显示联动:</h3>如权限类型、权限值
+        <common-form ref="twofromRef" :form-item-list="from2" :item-width="230" :label-width="80" />
+      </el-card>
+      <el-card>
+        <h3>
+          表单常用配置属性：一般用于搜索表单
+          <p style="color:red">special: true, // 是否为高级搜索内容。搭配搜索域使用，自动增加展开更多搜索功能 - Boolean</p>
+        </h3>
+        <common-form ref="detailFormRef" :form-item-list="from3" :item-width="180" :inline="true" />
       </el-card>
     </el-row>
   </div>
@@ -62,6 +69,7 @@ export default {
       fromItemList: [],
       from1: [],
       from2: [],
+      from3: [],
     }
   },
   created() {
@@ -307,12 +315,28 @@ export default {
         showItem: false,
       },
     ]
+    this.from3 = [
+      {
+        prop: 'default',
+        label: '默认控件:',
+        selected: '默认控件',
+      },
+      {
+        prop: 'more',
+        label: '展开控件:',
+        selected: '展开控件',
+        special: true, // 是否为高级搜索内容。搭配搜索域使用，添加自动增加展开更多搜索功能 - Boolean
+        showItem: false, // 默认控件不显示
+      },
+    ]
   },
 }
 </script>
 <style scoped>
-.el-card {
+.use .el-card {
   margin-right: 30px;
+  min-width: 380px !important;
+  max-width: 500px !important;
 }
 div {
   margin: 20px 0px;
