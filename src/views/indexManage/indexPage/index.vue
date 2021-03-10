@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2020-09-01 14:03:22
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-01-15 10:59:38
+ * @LastEditTime: 2021-03-10 16:33:21
 -->
 <template>
   <div class="app-container">
@@ -24,9 +24,6 @@
             </el-col>
           </el-row>
         </div>
-        <!-- <div class="pageThree">
-          <page-three />
-        </div>-->
         <div class="pageFour">
           <el-row type="flex" justify="space-between">
             <el-col :span="12" class="left">
@@ -36,12 +33,17 @@
               <page-four-right1 />
             </el-col>
           </el-row>
+          <el-row type="flex" justify="space-between" style="margin-top:15px">
+            <el-col :span="12" class="left">
+              <page-four-left />
+            </el-col>
+            <el-col :span="12">
+              <page-four-right />
+            </el-col>
+          </el-row>
         </div>
         <div class="pageFive">
           <page-five />
-        </div>
-        <div class="pageSix">
-          <page-six />
         </div>
       </el-col>
     </el-row>
@@ -79,9 +81,6 @@ export default {
 .left {
   margin-right: 20px !important;
 }
-.pageOne {
-  margin-bottom: 15px !important;
-}
 .pageOne,
 .pageTwo,
 .pageThree,
@@ -89,5 +88,6 @@ export default {
 .pageFive,
 .pageSix {
   border-radius: 4px !important;
+  margin-bottom: 15px !important;
 }
 </style>

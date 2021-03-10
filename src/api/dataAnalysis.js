@@ -3,25 +3,8 @@
  * @Author: zhanglinli
  * @Date: 2021-03-09 10:11:35
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-09 16:19:38
+ * @LastEditTime: 2021-03-10 16:06:45
  */
-export const f1 = async () => {
-  const data = () => {
-    return {
-      data: [
-        {
-          value: '1',
-          label: '已处理',
-        },
-        {
-          value: '0',
-          label: '未处理',
-        },
-      ],
-    }
-  }
-  return await data()
-}
 
 export const base = async () => {
   const data = () => {
@@ -133,43 +116,43 @@ export const processHistTimeRadar = async () => {
         data: {
           letter: {
             CheckRule: {
-              count: 0,
-              total: 0.0,
+              count: 1,
+              total: 2.0,
               avg: '0',
               label: '在线审核规则处理',
               processNow: 'CheckRule',
             },
             DataProcess: {
-              count: 0,
+              count: 1,
               total: 10.0,
               avg: '0',
               label: '数据处理',
               processNow: 'DataProcess',
             },
             Distribute: {
-              count: 0,
+              count: 1,
               total: 10.0,
               avg: '0',
               label: '数据分发',
               processNow: 'Distribute',
             },
             GeneratePDF: {
-              count: 0,
-              total: 20.0,
+              count: 1,
+              total: 10.0,
               avg: '0',
               label: '生成PDF',
               processNow: 'GeneratePDF',
             },
             OutPrint: {
-              count: 0,
-              total: 30.0,
+              count: 1,
+              total: 10.0,
               avg: '0',
               label: '外包打印',
               processNow: 'OutPrint',
             },
             SendEmail: {
-              count: 0,
-              total: 40.0,
+              count: 1,
+              total: 10.0,
               avg: '0',
               label: '发送邮件',
               processNow: 'SendEmail',
@@ -205,7 +188,7 @@ export const processHistTimeRadar = async () => {
               processNow: 'GeneratePDF',
             },
             OutPrint: {
-              count: 0,
+              count: 10,
               total: 1.0,
               avg: '0',
               label: '外包打印',

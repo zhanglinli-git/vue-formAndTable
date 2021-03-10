@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2020-09-28 09:32:29
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-01-18 14:50:11
+ * @LastEditTime: 2021-03-10 15:59:59
 -->
 <template>
   <el-card class="box-card">
@@ -98,8 +98,8 @@ export default {
     async fetchData(beginTime = null, endTime = null, jobType = 1) {
       await policyStatistics({ beginTime, endTime, jobType }).then(
         (response) => {
-          const series = response.data.data.series
-          const xdata = response.data.data.xdata
+          const series = response.data.series
+          const xdata = response.data.xdata
           if (series) {
             this.histogramData.xData = xdata
             series.forEach((item, index) => {

@@ -115,3 +115,21 @@ export function param2Obj(url) {
   })
   return obj
 }
+
+// 判断数据是否在树形结构中
+export const getTreeFindItem = (data, name) => {
+  let result = false
+  const getTreeItem = (data, name) => {
+    data.map((item) => {
+      if (item.name === name) {
+        result = true // 结果赋值
+      } else {
+        if (item.children) {
+          getTreeItem(item.children, name)
+        }
+      }
+    })
+  }
+  getTreeItem(data, name)
+  return result
+}

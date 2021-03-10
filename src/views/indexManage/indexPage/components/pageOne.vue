@@ -34,7 +34,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { getCountByAcceptTime } from '@/api/firstPageApi'
-import { getTreeFindItem } from '@/utils/public'
+import { getTreeFindItem } from '@/utils/index'
 
 export default {
   data() {

@@ -1,9 +1,9 @@
 <!--
- * @Descripttion: 该页面用于——
+ * @Descripttion:
  * @Author: zhanglinli
- * @Date: 2020-12-08 09:16:02
+ * @Date: 2020-09-28 09:29:12
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-02-01 14:21:44
+ * @LastEditTime: 2021-02-01 14:21:53
 -->
 <template>
   <el-card class="box-card">
@@ -16,7 +16,7 @@
           size="mini"
           plain
           style="margin-right:8px"
-        />信函待办事务
+        />保单待办事务
       </span>
     </div>
     <div v-if="data.length > 0" class="container-page-main">
@@ -25,7 +25,7 @@
           <el-col :key="index" :span="8" @click.native="toLint(item.label)">
             <font :class="'purple'">{{ item.count }}</font>
             <br />
-            <div class="p-label"> 待{{ item.label }}信函</div>
+            <div class="p-label">待{{ item.label }}保单</div>
           </el-col>
         </template>
       </el-row>
@@ -36,7 +36,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { getWaitDeal } from '@/api/firstPageApi'
-import { getTreeFindItem } from '@/utils/public'
+import { getTreeFindItem } from '@/utils/index'
 
 export default {
   data() {
@@ -48,8 +48,8 @@ export default {
     ...mapGetters(['theme']),
   },
   created() {
-    // 信函待处理事务-右
-    const getWaitDealParam = { type: 'LETTER' }
+    // 保单待处理事务-左
+    const getWaitDealParam = { type: 'POLICY' }
     getWaitDeal(getWaitDealParam).then((res) => {
       this.data = res.data
       // this.data.push({ count: 10, label: '延时' })
@@ -58,17 +58,17 @@ export default {
   methods: {
     toLint(name) {
       switch (name) {
-        case '地址质检':
-          this.filterPath('LetterAddressQuality')
+        case '地址审核':
+          this.filterPath('PolicyAddressQuality')
           break
         case '特殊数据审核':
-          this.filterPath('LetterSpecialDataCheck')
+          this.filterPath('PolicySpecialDataCheck')
           break
         case '重复数据审核':
-          this.filterPath('LetterRepeatDataCheck')
+          this.filterPath('PolicyRepeatDataCheck')
           break
         case '电邮地址审核':
-          this.filterPath('LetterMailAddressCheck')
+          this.filterPath('PolicyMailAddressCheck')
           break
       }
     },
@@ -97,4 +97,3 @@ export default {
   color: #515a6e;
 }
 </style>
-

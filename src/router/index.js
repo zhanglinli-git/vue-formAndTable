@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 14:52:26
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-09 10:15:12
+ * @LastEditTime: 2021-03-10 15:46:33
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -52,17 +52,37 @@ export const constantRoutes = [
     ],
   },
   {
-    path: '/dataAnalysis',
+    path: '/indexManage',
     component: Layout,
-    redirect: '/dataAnalysis',
-    name: 'DataAnalysis1',
+    meta: {
+      title: '可视化echarts',
+      icon: 'table',
+    },
     children: [
       {
-        path: 'dataAnalysis',
-        name: 'DataAnalysis',
+        path: 'dataAnalysis1',
+        name: 'DataAnalysis1',
         component: () => import('@/views/indexManage/dataAnalysis1/index'),
         meta: {
           title: '数据分析页',
+          icon: 'nested',
+        },
+      },
+      {
+        path: 'dataAnalysis',
+        name: 'DataAnalysis',
+        component: () => import('@/views/indexManage/dataAnalysis/index'),
+        meta: {
+          title: '数据分析页2',
+          icon: 'nested',
+        },
+      },
+      {
+        path: 'index',
+        name: 'Index',
+        component: () => import('@/views/indexManage/indexPage/index'),
+        meta: {
+          title: '首页',
           icon: 'nested',
         },
       },
