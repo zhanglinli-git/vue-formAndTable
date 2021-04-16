@@ -3,7 +3,7 @@
  * @Author: zhanglinli
  * @Date: 2021-03-01 14:52:26
  * @LastEditors: zhanglinli
- * @LastEditTime: 2021-03-10 15:46:33
+ * @LastEditTime: 2021-04-16 19:01:18
  */
 import Vue from 'vue'
 import Router from 'vue-router'
@@ -64,7 +64,7 @@ export const constantRoutes = [
         name: 'DataAnalysis1',
         component: () => import('@/views/indexManage/dataAnalysis1/index'),
         meta: {
-          title: '数据分析页',
+          title: '可视化1',
           icon: 'nested',
         },
       },
@@ -73,7 +73,7 @@ export const constantRoutes = [
         name: 'DataAnalysis',
         component: () => import('@/views/indexManage/dataAnalysis/index'),
         meta: {
-          title: '数据分析页2',
+          title: '可视化2',
           icon: 'nested',
         },
       },
@@ -82,7 +82,7 @@ export const constantRoutes = [
         name: 'Index',
         component: () => import('@/views/indexManage/indexPage/index'),
         meta: {
-          title: '首页',
+          title: '可视化3',
           icon: 'nested',
         },
       },
